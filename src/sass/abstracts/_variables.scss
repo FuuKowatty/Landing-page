@@ -1,0 +1,27 @@
+// colors 
+$lightGray: #c4c4c4;
+$gray: #b2b2b2;
+$darkGray: #a0a0a0;
+$orange: #ffa500;
+
+// font sizes
+$xs: 0.625rem;
+$sm: 0.75rem;
+$md: 1rem;
+$lg: 1.5rem;
+
+// spacing
+$spacing-unit: 8px;
+$spacing1: $spacing-unit;
+$spacing2: 2 * $spacing-unit;
+$spacing3: 3 * $spacing-unit;
+
+// z-index
+$z-index-dropdown: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+
+// other
+$border-radius: 4px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$transition-duration: 0.3s;
