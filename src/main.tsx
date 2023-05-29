@@ -5,6 +5,5 @@ import { App } from 'App'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-    <h1>siema</h1>
   </React.StrictMode>,
 )

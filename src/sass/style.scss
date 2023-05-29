@@ -1,10 +1,4 @@
 @use 'abstracts' as *;
 @use 'base';
 // @use 'components';
-// @use 'sections';
-
-.chuj {
-    @include respond-to('medium') {
-        color: $orange;
-    }
-}
+@use 'sections' as *;
