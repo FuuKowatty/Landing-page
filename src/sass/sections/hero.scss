@@ -1,5 +1,121 @@
 @use '../abstracts' as *;
 
-.hero-section {
-    
+.hero{
+
+    &--section {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-image: url('https://images.unsplash.com/photo-1494949360228-4e9bde560065?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhhaWxhbmQlMjB0cmF2ZWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+
+        @include respond-to('medium') {
+            background-image: url('https://wallpapercave.com/wp/wp2899853.jpg');
+            background-size: cover;
+        }
+
+        @include respond-to('large') {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+        }
+        
+    }
+
+    &__content {
+        background: $transparent;
+        padding: $spacing2;
+        text-align: center;
+        max-width: 375px;
+        @include respond-to('very-small') {
+            max-width: 420px;
+        }
+
+        @include respond-to('large') {
+            grid-column: 6 / span 6;
+            grid-row: 4 / span 6;
+            grid-template-rows: repeat(12, 1fr);
+            max-width: 100%;
+            padding: $spacing4;
+
+        }
+    }
+
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        
+
+        &__item {
+            display: block;
+            font-weight: 900;
+            font-size: $header3;
+            color: $white;
+            border-bottom: 3px solid $lightGray;
+            line-height: 2rem;
+
+            &:nth-child(2) {
+                opacity: 0.75;
+            }
+
+            &:last-child {
+                opacity: 0.5;
+            }
+
+            
+            @include respond-to('very-small') {
+                font-size: $header2;
+                line-height: 2.5rem;
+            }
+
+            @include respond-to('small') {
+                font-size: $header1;
+                line-height: 3rem;
+            }
+
+            
+            @include respond-to('huge') {
+                font-size: $header0;
+                line-height: 3.5rem;
+            }
+
+
+        }
+    }
+
+    &__description {
+        padding: $spacing4 $spacing2;
+        text-align: left;
+        color: white;
+
+        @include respond-to('small') {
+            font-size: $lg;
+            padding: $spacing6 $spacing3;
+        }
+
+        @include respond-to('huge') {
+            font-size: $xl;
+        }
+    }
+
+    &__button {
+        padding: $spacing3 $spacing6;
+        background-color: $orange;
+        border: none;
+        border-radius: $radius;
+        color: $white;
+        text-transform: uppercase;
+        font-size: $lg;
+        font-weight: 700;
+        cursor: pointer;
+
+        @include respond-to('small') {
+            padding: $spacing4 $spacing8;
+            font-size: $xl;
+        }
+
+        &:hover {
+            background-color: darken($orange, 5%);
+        } 
+
+    }
+
 }

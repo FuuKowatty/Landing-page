@@ -1,11 +1,9 @@
-import 'sass/style.scss';
+import { Hero } from 'sections/Hero';
 
 export function App() {
   return (
     <div className='container'>
-      <div className='hero-section'>
-        Discover Thailand
-      </div>
+      <Hero />
     </div>
   );
 }
