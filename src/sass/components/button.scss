@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.button {
+    padding: $spacing3 $spacing6;
+    background-color: $dark; 
+    color: $white;
+    border-radius: $radius2;
+    border: 1px solid $white;
+    font-size: $lg;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($dark, 5%);
+    }
+}

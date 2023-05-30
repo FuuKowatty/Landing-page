@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: $spacing3;
+    background: $dark;
+    color: $white
+}
