@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.menu {
+    position: absolute;
+    padding: $spacing2;
+    padding-top: 0;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $dark;
+    text-align: center;
+
+    &__item {
+        padding: $spacing2;
+        border-bottom: 1px solid $pink;
+
+        &:first-child {
+            border-top: 1px solid $pink;
+        }
+    }
+}

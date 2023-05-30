@@ -4,7 +4,12 @@
     position: sticky;
     top: 0;
     left: 0;
+    height: 80px;
     padding: $spacing3;
     background: $dark;
-    color: $white
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
 }
