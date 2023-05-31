@@ -16,6 +16,7 @@
     position: static;
     display: flex;
     align-items: center;
+    gap: $spacing2;
     padding: 0;
     width: auto;
   }
@@ -30,7 +31,6 @@
 
     @include respond-to('very-small') {
       border: none;
-      padding: $spacing2;
       &:first-child {
         border-top: none;
         
