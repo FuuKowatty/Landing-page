@@ -12,4 +12,18 @@
   align-items: center;
   justify-content: space-between;
   z-index: 9999;
+  font-size: $md;
+
+  @include respond-to('medium') {
+    font-size: $lg;
+    height: 100px;
+  }
+
+
+  &__mobile {
+
+    @include respond-to('very-small') {
+      display: none;
+    }
+  }
 }

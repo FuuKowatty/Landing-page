@@ -1,8 +1,8 @@
 import 'sass/style.scss'
 
-const pages = ['Page1', 'Page2', 'Page3', 'Page4', 'Page5']
+const pages = ['Home', 'Page2', 'Page3', 'Page4', 'Page5']
 
-export function Menu({ isClosing }: { isClosing: boolean}) {
+export function Menu({ isClosing }: { isClosing?: boolean}) {
 
 
   return (
