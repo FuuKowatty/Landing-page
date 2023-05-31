@@ -1,5 +1,5 @@
-import { Navbar } from 'components/Navbar';
-import { Header } from 'sections/Header';
+import { Navbar } from 'components/Navbar'
+import { Header } from 'sections/Header'
 
 export function App() {
   return (
@@ -7,5 +7,5 @@ export function App() {
       <Navbar />
       <Header />
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import 'sass/style.scss';
+import 'sass/style.scss'
 
 export function Header() {
   return (
@@ -6,9 +6,9 @@ export function Header() {
       <h1 className='header__text'>Travel around the world!</h1>
       <button className='button'>Sing Up</button>
 
-
-
-      <a href="http://www.freepik.com" className='header_img_author' target='_blank'>Header Designed by gstudioimagen / Freepik</a>
+      <a href='http://www.freepik.com' className='header_img_author' target='_blank'>
+        Header Designed by gstudioimagen / Freepik
+      </a>
     </div>
   )
 }

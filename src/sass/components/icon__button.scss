@@ -1,12 +1,12 @@
 @use '../abstracts' as *;
 
 .icon__button {
-    border: none;
-    font-size: $xl;
-    background: none;
-    color: $white;
-    cursor: pointer;
-    min-width: 44px;
-    min-height: 44px;
-    text-align: right; // for navbar menu icon
+  border: none;
+  font-size: $xl;
+  background: none;
+  color: $white;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  text-align: right; // for navbar menu icon
 }
