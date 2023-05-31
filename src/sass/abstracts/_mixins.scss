@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './media-queries' as *;
 
 @mixin button {
         padding: $spacing3 $spacing6;
@@ -13,5 +14,19 @@
         &:hover {
           background-color: darken($dark, 5%);
         }
-        @content
+};
+
+
+@mixin calculateHeight {
+  min-height: calc(100vh - 80px);
+
+  @include respond-to('medium') {
+    min-height: calc(100vh - 100px);
+  };
+
+  @include respond-to('large') {
+    min-height: calc(100vh - 100px);
+  }
 }
+
+
