@@ -20,8 +20,6 @@
     grid-template-columns: repeat(10, 1fr);
   }
 
-  
-
   &__text {
     font-weight: 900;
     font-size: $header3;
@@ -32,24 +30,22 @@
     }
 
     @include respond-to('large') {
-      grid-column: 2/ span 4;
+      grid-column: 2 / span 4;
       font-size: $header0;
-      text-align: left
+      text-align: left;
     }
 
     @include respond-to('huge') {
       font-size: $headerxl;
     }
   }
-
-
 }
 
 .button--menu {
   @include button;
 
   @include respond-to('large') {
-    grid-column: 2/ span 3;
+    grid-column: 2 / span 3;
     padding: $spacing4 $spacing8;
   }
 }

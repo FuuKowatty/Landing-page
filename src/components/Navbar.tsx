@@ -9,12 +9,11 @@ export function Navbar() {
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 
-  const {isMobile} = useViewport()
+  const { isMobile } = useViewport()
 
   const handleIsVisible = () => {
     setIsVisible((prev) => !prev)
   }
-
 
   const handleClose = () => {
     setIsClosing(true)
@@ -28,17 +27,17 @@ export function Navbar() {
     <div className='navbar'>
       Navbar
       <div className='navbar__mobile'>
-      {isVisible ? (
-            <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
-                <AiOutlineClose />
-            </button>
-      ) : (
-        <button className='icon__button' onClick={handleIsVisible}>
-          <CiMenuFries />
-        </button>
-      )}
+        {isVisible ? (
+          <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
+            <AiOutlineClose />
+          </button>
+        ) : (
+          <button className='icon__button' onClick={handleIsVisible}>
+            <CiMenuFries />
+          </button>
+        )}
       </div>
-      {isMobile ? (isVisible && <Menu isClosing={isClosing}/>)  : <Menu />}
+      {isMobile ? isVisible && <Menu isClosing={isClosing} /> : <Menu />}
     </div>
   )
 }

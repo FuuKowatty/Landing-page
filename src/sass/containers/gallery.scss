@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slider {
+    width: 300px;
+    overflow: hidden;
+    background-color: $pink;
+    border-radius: $radius2;
+    display: flex;
+
+    &__img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+}

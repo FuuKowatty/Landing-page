@@ -10,7 +10,7 @@ export const useViewport = () => {
   }, [])
 
   const browserWidth = width
-  const isMobile = width < 600;
-  const isTablet = width < 1000;
+  const isMobile = width < 600
+  const isTablet = width < 1000
   return { browserWidth, isMobile, isTablet }
 }
