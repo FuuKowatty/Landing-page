@@ -35,7 +35,6 @@ const spliderOptions = {
   type: 'fade',
   role: 'carousel',
   rewind:true, 
-  perMove: 2,
   autoplay: true,
   arrows: true,
 }
