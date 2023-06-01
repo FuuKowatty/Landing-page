@@ -32,10 +32,9 @@ const images = [
   ];
 
 const spliderOptions = {
-  type: 'fade',
+  type: 'loop',
   role: 'carousel',
   rewind:true, 
-  autoplay: true,
   arrows: true,
 }
 
@@ -53,7 +52,7 @@ export function Gallery() {
             {images.map(image =>(
                 <SplideSlide key={image.url}>
                   <div className='slide'>
-                  <img src={image.url} className='slider__img' alt='image slider'/>
+                  <img src={image.url} className='slider__image' alt='image slider'/>
                     <div className='slide__content'>
                       <h2 className='slide__title'>{image.name}</h2>
                       <p className='slide__description'>{image.description}</p>

@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.reviews {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing2;
+    padding: 0 $spacing3;
+
+
+    &__content {
+        color: black;
+    }
+}
+
+.review {
+    background-color: $white;
+    padding: $spacing2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing1;
+    
+    &__image {
+        border-radius: 50%;
+        overflow: hidden;
+        height: 200px;
+        width: 200px;
+        
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
