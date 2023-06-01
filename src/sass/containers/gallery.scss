@@ -2,17 +2,37 @@
 
 .gallery {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: $spacing2;
 }
 
 .slider {
-    width: 300px;
+
+    max-width: 1200px;
+    width: 100%;
     overflow: hidden;
     background-color: $pink;
+    border: 3px solid $pink;
     border-radius: $radius2;
     display: flex;
+
+    @include respond-to('very-small') {
+        max-height: 375px;
+        max-width: 550px;
+    }
+
+    @include respond-to('medium') {
+        max-height: 350px;
+        max-width: 700px;
+    }
+
+    @include respond-to('huge') {
+        max-height: 600px;
+        max-width: 1200px;
+    }
 
     &__img {
         object-fit: contain;

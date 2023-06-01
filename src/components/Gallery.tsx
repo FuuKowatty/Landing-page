@@ -1,24 +1,28 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import 'sass/style.scss'
 
 const images = [
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-  'https://placehold.co/400',
-  'https://placehold.co/400',
+  'https://i.imgur.com/h4rQgZ4.jpg',
+  'https://i.imgur.com/SikzDp8.jpg',
+  'https://i.imgur.com/CW4tNwS.jpg',
+  'https://i.imgur.com/0Q6S6VC.jpg',
+  'https://i.imgur.com/lUG0SER.jpg',
 ]
+
+const spliderOptions = {
+  rewind: true,
+  perPage: 3,
+}
 
 export function Gallery() {
   return (
     <div className='gallery'>
+      Siema
         <div className='slider'>
           <Splide options={ 
             { 
-              rewind: true,
-              role: 'carousel',
+              spliderOptions
 
             } 
           } aria-label="React Splide Example">
