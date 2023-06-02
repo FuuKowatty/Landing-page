@@ -1,74 +1,72 @@
 @use '../abstracts' as *;
 
 .reviews__container {
-    &__title {
-      text-align: center;
-    }
+  &__title {
+    text-align: center;
   }
-  
-  .reviews {
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    gap: $spacing2;
-    padding: 0 $spacing3;
+}
 
+.reviews {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: $spacing2;
+  padding: 0 $spacing3;
 
-    @include respond-to('small') {
-        grid-template-columns: 1fr 1fr; 
-        max-width: 800px;
-    }
-
-    @include respond-to('medium') {
-        grid-template-columns: 1fr 1fr 1fr; 
-        max-width: 1000px;
-    }
-
-    @include respond-to('large') {
-        grid-template-columns: 1fr 1fr 1fr; 
-        max-width: 1200px;
-        padding: 0;
-    }
-  
+  @include respond-to('small') {
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
   }
-  
-  .review {
-    color: black;
+
+  @include respond-to('medium') {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+
+.review {
+  color: black;
+  min-height: 450px;
+  background-color: $white;
+  padding: $spacing2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing1;
+  border-radius: $radius1;
+
+  &:nth-of-type(2) {
+    /* Use nth-of-type() instead of nth-child() */
+    background-color: $lighter-dark;
+    color: $white;
+  }
+
+  @include respond-to('very-small') {
+    min-height: 400px;
+  }
+
+  @include respond-to('small') {
     min-height: 450px;
-    background-color: $white;
-    padding: $spacing2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing1;
-    border-radius: $radius1;
+  }
 
-    &:nth-of-type(2) { /* Use nth-of-type() instead of nth-child() */
-        background-color: $lighter-dark;
-        color: $white;
-      };
-  
-    @include respond-to('very-small') {
-      min-height: 400px;
-    };
-  
-    @include respond-to('small') {
-      min-height: 450px;
-    };
-  
-    &__image {
-      border-radius: 50%;
-      overflow: hidden;
-      height: 200px;
-      width: 200px;
-  
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-      }
+  &__image {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
     }
   }
-  
+}
