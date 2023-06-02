@@ -8,6 +8,7 @@ $darkGray: #a0a0a0;
 $orange: #ff7f00;
 $transparent: rgba(0, 0, 0, 0.5);
 $dark: #252969;
+$lighter-dark: lighten($dark, 10%);
 $pink: #ff6ec7;
 
 // font sizes
