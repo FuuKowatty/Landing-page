@@ -1,13 +1,18 @@
+
+import { tourProps } from 'App';
 import 'sass/style.scss'
+import { handleUserTourProps } from 'sections/Explore';
+
 
 interface TourCardProps {
-  image: string
-  name: string
-  description: string
-  price: number
+  tour: tourProps;
+  handleUserTour: handleUserTourProps;
 }
 
-export function TourCard({ image, name, description, price }: TourCardProps) {
+export function TourCard({ tour, handleUserTour }: TourCardProps) {
+
+  const {image, name, description, price} = tour
+
   return (
     <div className='tour-card'>
       <img className='tour-card__image' src={image} alt={name} />
@@ -16,7 +21,7 @@ export function TourCard({ image, name, description, price }: TourCardProps) {
         <p className='tour-card__description'>{description}</p>
       </div>
       <div className='tour-card__price'>Price: ${price}</div>
-      <button className='button--card'>Book Now</button>
+      <button className='button--card' onClick={() => handleUserTour(tour.name)}>Book Now</button>
     </div>
   )
 }

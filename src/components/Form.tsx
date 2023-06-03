@@ -1,6 +1,7 @@
 import 'sass/style.scss'
+import { reservationProps } from 'sections/Reservation'
 
-export function Form() {
+export function Form({userTour, handleUserTour, tourNames} : reservationProps) {
   return (
     <form className='form'>
       <div className='form__section'>
@@ -42,13 +43,10 @@ export function Form() {
           <label className='form__label' htmlFor='holiday'>
             Holiday
           </label>
-          <select className='form__select' name='holiday' id='holiday'>
-            <option value=''>Option 1</option>
-            <option value=''>Option 2</option>
-            <option value=''>Option 3</option>
-            <option value=''>Option 4</option>
-            <option value=''>Option 5</option>
-            <option value=''>Option 6</option>
+          <select className='form__select' name='holiday' id='holiday' value={userTour ? userTour.name : 'select option'} onChange={(e) => handleUserTour(e.currentTarget.value)}>
+            {tourNames.map(name => (
+              <option value={name}>{name}</option>
+            ))}
           </select>
         </div>
 
@@ -56,13 +54,13 @@ export function Form() {
           <label className='form__label' htmlFor='depart-date'>
             Depart
           </label>
-          <input className='form__input' type='date' id='depart-date' readOnly />
+          <input className='form__input' type='date' value={userTour?.depart ? userTour.depart.toISOString().substr(0, 10) : ''} id='depart-date' readOnly />
         </div>
         <div className='form__row'>
           <label className='form__label' htmlFor='return-date'>
             Return
           </label>
-          <input className='form__input' type='date' id='return-date' readOnly />
+          <input className='form__input' type='date'  value={userTour?.return ? userTour.return.toISOString().substr(0, 10) : ''} id='return-date' readOnly />
         </div>
       </div>
 
@@ -76,7 +74,7 @@ export function Form() {
             className='form__input'
             type='email'
             id='email'
-            placeholder='JohnSmith1@example.pl'
+            placeholder='JohnSmith1@example.com'
           />
         </div>
         <div className='form__row'>

@@ -34,7 +34,7 @@ export function Reviews() {
         {users.map((user) => {
           const { name, image, rate, comment } = user
 
-          return <Review name={name} image={image} rate={rate} comment={comment} />
+          return <Review key={name} name={name} image={image} rate={rate} comment={comment} />
         })}
       </div>
     </div>

@@ -1,49 +1,63 @@
 @use '../abstracts' as *;
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    display: flex;
+    flex-direction: column;
 
-.form__section-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
+    gap: $spacing3;
+  
+  
+    &__section {
+      display: flex;
+      flex-direction: column;
 
-.form__row {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+    }
 
-.form__label {
-  font-weight: bold;
-}
-
-.form__input,
-.form__select,
-.form__textarea {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form__radio-group {
-  display: flex;
-  gap: 10px;
-}
-
-.form__radio-label {
-  display: flex;
-  align-items: center;
-}
-
-.form__radio {
-  margin-right: 5px;
-}
-
-.form__button {
-  @include button;
-}
+    &__section-title {
+      font-size: $lg;
+      margin-top: $spacing3;
+    }
+  
+    &__row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    &__label {
+      font-weight: bold;
+      margin-top: $spacing2;
+    }
+  
+    &__input,
+    &__select,
+    &__textarea {
+      padding: $spacing1;
+      font-size: $md;
+      border: 1px solid #ccc;
+      border-radius: $radius1;
+    }
+  
+    &__radio-group {
+      display: flex;
+      gap: 10px;
+    }
+  
+    &__radio-label {
+      display: flex;
+      align-items: center;
+    }
+  
+    &__radio {
+      margin-right: 5px;
+    }
+  
+    &__button {
+      @include button;
+      padding: $spacing1 $spacing2;
+      font-size: $md;
+      width: fit-content;
+      margin: auto;
+    }
+  }
+  
