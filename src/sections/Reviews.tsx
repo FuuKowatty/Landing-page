@@ -1,5 +1,4 @@
 import { Review } from 'components/Review'
-import 'sass/style.scss'
 
 const users = [
   {

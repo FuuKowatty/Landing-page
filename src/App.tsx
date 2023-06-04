@@ -7,12 +7,12 @@ import { Reservation } from 'sections/Reservation'
 import { useState } from 'react'
 
 export interface tourProps {
-  name: string;
-  description: string;
-  price: number;
-  depart: Date;
-  return: Date;
-  image: string;
+  name: string
+  description: string
+  price: number
+  depart: Date
+  return: Date
+  image: string
 }
 
 const tours = [
@@ -22,7 +22,7 @@ const tours = [
     price: 2500,
     depart: new Date('2024-03-15'),
     return: new Date('2024-03-28'),
-    image: 'https://placehold.co/300x300'
+    image: 'https://placehold.co/300x300',
   },
   {
     name: 'Thailand Tropical Paradise',
@@ -30,15 +30,16 @@ const tours = [
     price: 1800,
     depart: new Date('2024-05-10'),
     return: new Date('2024-05-24'),
-    image: 'https://placehold.co/300x300'
+    image: 'https://placehold.co/300x300',
   },
   {
     name: 'India Cultural Odyssey',
-    description: 'Embark on a cultural journey through India\'s ancient landmarks and diverse cities.',
+    description:
+      'Embark on a cultural journey through India\'s ancient landmarks and diverse cities.',
     price: 2300,
     depart: new Date('2024-07-01'),
     return: new Date('2024-07-15'),
-    image: 'https://placehold.co/300x300'
+    image: 'https://placehold.co/300x300',
   },
   {
     name: 'Vietnam Ha Long Bay Adventure',
@@ -46,7 +47,7 @@ const tours = [
     price: 1700,
     depart: new Date('2024-09-05'),
     return: new Date('2024-09-18'),
-    image: 'https://placehold.co/300x300'
+    image: 'https://placehold.co/300x300',
   },
   {
     name: 'South Korea Seoul City Escape',
@@ -54,7 +55,7 @@ const tours = [
     price: 1500,
     depart: new Date('2024-11-15'),
     return: new Date('2024-11-28'),
-    image: 'https://placehold.co/300x300'
+    image: 'https://placehold.co/300x300',
   },
   {
     name: 'Indonesia Bali Bliss',
@@ -62,16 +63,15 @@ const tours = [
     price: 2000,
     depart: new Date('2025-01-10'),
     return: new Date('2025-01-24'),
-    image: 'https://placehold.co/300x300'
-  }
-];
+    image: 'https://placehold.co/300x300',
+  },
+]
 
 export function App() {
-
   const [userTour, setUserTour] = useState<tourProps | null>(null)
 
   const handleUserTour = (name: string) => {
-    setUserTour(tours.filter(tour => tour.name === name)[0])
+    setUserTour(tours.filter((tour) => tour.name === name)[0])
   }
 
   return (
@@ -80,8 +80,12 @@ export function App() {
       <Header />
       <Gallery />
       <Reviews />
-      <Explore tours={tours} handleUserTour={handleUserTour}/>
-      <Reservation userTour={userTour} tourNames={tours.map(tour => tour.name)} handleUserTour={handleUserTour}/>
+      <Explore tours={tours} handleUserTour={handleUserTour} />
+      <Reservation
+        userTour={userTour}
+        tourNames={tours.map((tour) => tour.name)}
+        handleUserTour={handleUserTour}
+      />
     </div>
   )
 }
