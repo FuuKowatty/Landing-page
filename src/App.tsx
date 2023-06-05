@@ -5,6 +5,7 @@ import { Reviews } from 'sections/Reviews'
 import { Reservation } from 'sections/Reservation'
 import { useState } from 'react'
 import About from 'sections/About'
+import { Footer } from 'components/Footer'
 
 export type handleUserTourProps = (name: string | null) => void
 export interface tourProps {
@@ -87,6 +88,7 @@ export function App() {
         tourNames={tours.map((tour) => tour.name)}
         handleUserTour={handleUserTour}
       />
+      <Footer />
     </div>
   )
 }

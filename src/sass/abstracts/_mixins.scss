@@ -27,3 +27,12 @@
     min-height: calc(100vh - 100px);
   }
 }
+
+@mixin newsletter-items {
+  max-width: 350px;
+  width: 100%;
+  padding: $spacing1 $spacing2;
+  border: 1px solid $white;
+  border-radius: $radius1;
+  font-size: $md;
+}
