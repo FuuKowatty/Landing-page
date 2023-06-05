@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.button {
+  @include button;
+}
+
+.button--card {
+  @include button;
+  padding: $spacing1 $spacing2;
+}

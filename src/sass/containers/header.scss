@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.header {
+  padding: $spacing3;
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  place-items: center;
+  position: relative;
+  @include calculateHeight;
+  background-size: cover;
+  background-image: url('https://i.imgur.com/1QD6U8g.png');
+
+  @include respond-to('small') {
+    background-image: url('https://i.imgur.com/srRyTJH.jpg');
+  }
+
+  @include respond-to('large') {
+    background-image: url('https://i.imgur.com/lodS96X.jpg');
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  &__text {
+    font-weight: 900;
+    font-size: $header3;
+    text-align: center;
+
+    @include respond-to('medium') {
+      font-size: $header1;
+    }
+
+    @include respond-to('large') {
+      grid-column: 2 / span 4;
+      font-size: $header0;
+      text-align: left;
+    }
+
+    @include respond-to('huge') {
+      font-size: $headerxl;
+    }
+  }
+}
+
+.button--menu {
+  @include button;
+
+  @include respond-to('large') {
+    grid-column: 2 / span 3;
+    padding: $spacing4 $spacing8;
+  }
+}
+
+.header_img_author {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: $white;
+  font-size: $sm;
+  font-weight: normal;
+  text-decoration: none;
+}
