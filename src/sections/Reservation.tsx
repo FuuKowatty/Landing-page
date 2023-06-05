@@ -1,7 +1,7 @@
 
-import { tourProps } from 'App'
+import { handleUserTourProps, tourProps } from 'App'
 import 'sass/style.scss'
-import { handleUserTourProps } from './Explore'
+
 import { Form } from 'components/Form/Form'
 
 export interface reservationProps {

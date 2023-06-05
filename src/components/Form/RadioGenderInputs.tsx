@@ -1,14 +1,20 @@
 import { ChangeEvent } from 'react';
+import { RequiredSymbol } from './RequiredSymbol';
+import { Tooltip } from 'components/Tooltip';
 
 interface RadioInputProps {
     value: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    required?: boolean;
+    error: string | undefined;
+    touched?: boolean;
   }
 
-export function RadioGenderInputs({ value, onChange } : RadioInputProps) {
+export function RadioGenderInputs({ value, onChange, required, error, touched } : RadioInputProps) {
     return (
       <div className='form__row'>
-        <label className='form__label'>Gender</label>
+        <label className='form__label'>Gender {required && <RequiredSymbol />}
+        </label>
         <div className='form__radio-group'>
           <label className='form__radio-label'>
             <input
@@ -19,7 +25,7 @@ export function RadioGenderInputs({ value, onChange } : RadioInputProps) {
               checked={value === 'male'}
               onChange={onChange}
             />
-            Male
+            Male 
           </label>
           <label className='form__radio-label'>
             <input
@@ -44,6 +50,7 @@ export function RadioGenderInputs({ value, onChange } : RadioInputProps) {
             Other
           </label>
         </div>
+        {error && touched && <Tooltip>{error}</Tooltip>}
       </div>
     );
   }

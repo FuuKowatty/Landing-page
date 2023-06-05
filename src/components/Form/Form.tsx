@@ -1,41 +1,35 @@
 import { useFormik } from 'formik';
-import * as yup from 'yup';
 import { reservationProps } from 'sections/Reservation';
 import {InputField} from './InputField';
 import {RadioGenderInputs} from './RadioGenderInputs';
 import {SelectField} from './SelectField';
 import {TextAreaField} from './TextArea';
-import { ChangeEvent } from 'react';
-import { InputNumberField } from './InputNumberField';
+import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { schema } from 'utils/schema';
+import { Modal } from 'components/Modal';
+
+
 
 export function Form({ userTour, handleUserTour, tourNames }: reservationProps) {
-  
-  const schema = yup.object().shape({
-    firstName: yup.string().min(3).required(),
-    lastName: yup.string().min(3).required(),
-    gender: yup.string().required(),
-    email: yup.string().required(),
-    phoneNumber: yup.string().required(),
-    additionalInformation: yup.string(),
-    holiday: yup.string().required()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
 
-  });
+  const handleCloseModal = (event: MouseEvent<HTMLButtonElement>) => {
+    setIsClosing(true)
+    onFormReset(event)
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setIsClosing(false)
+    }, 300)
+  }
 
   const handleOnSubmit = () => {
     if (userTour) {
-      const { name: holiday, price, depart: departDate, return: returnDate } = userTour;
-      const reservation = {
-        ...values,
-        holiday,
-        price,
-        departDate,
-        returnDate,
-      };
-      console.log(reservation);
+      setIsModalOpen(true);
     }
   };
 
-  const { handleSubmit, handleChange, values, errors } = useFormik({
+  const { handleSubmit, handleChange, handleReset,values, errors, touched, setFieldValue } = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -43,20 +37,29 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
       email: '',
       phoneNumber: '',
       additionalInformation: '',
-      holiday: '',
+      holiday:'',
     },
-    validationSchema: schema,
+    validationSchema: schema, 
     onSubmit: handleOnSubmit,
   });
 
-  console.log(errors)
+  useEffect(() => {
+    if (userTour) {
+      setFieldValue('holiday', userTour.name);
+    }
+  }, [userTour, setFieldValue]);
 
   const onTourChange = (event: ChangeEvent<HTMLSelectElement>) => {
     handleUserTour(event.currentTarget.value)
-    handleChange(event)
+  }
+
+  const onFormReset = (event: MouseEvent<HTMLButtonElement>) => {
+    handleUserTour(null)
+    handleReset(event)
   }
 
   return (
+    <>
     <form className='form' onSubmit={handleSubmit}>
       <div className='form__section'>
         <h4 className='form__section-title'>Personal Information</h4>
@@ -66,6 +69,9 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           placeholder='John'
           value={values.firstName}
           onChange={handleChange}
+          required={true}
+          error={errors.firstName}
+          touched={touched.firstName}
         />
         <InputField
           label='Last Name'
@@ -73,8 +79,11 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           placeholder='Smith'
           value={values.lastName}
           onChange={handleChange}
+          required={true}
+          error={errors.lastName}
+          touched={touched.lastName}
         />
-        <RadioGenderInputs value={values.gender} onChange={handleChange} />
+        <RadioGenderInputs value={values.gender} onChange={handleChange} required={true} error={errors.gender} touched={touched.gender}/>
       </div>
 
       <div className='form__section'>
@@ -85,19 +94,27 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           value={values.holiday}
           onChange={(event) => onTourChange(event)}
           options={tourNames}
+          required={true}
+          error={errors.holiday}
+          touched={touched.holiday}
         />
+        <div className='form__date__container'>
         <InputField
+        type='date'
           label='Depart'
           id='depart-date'
           value={userTour?.depart ? userTour.depart.toISOString().substr(0, 10) : ''}
           readonly={true}
         />
+        
         <InputField
+        type='date'
           label='Return'
           id='return-date'
           value={userTour?.return ? userTour.return.toISOString().substr(0, 10) : ''}
           readonly={true}
         />
+        </div>
       </div>
 
       <div className='form__section'>
@@ -108,13 +125,20 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           placeholder='JohnSmith1@example.com'
           value={values.email}
           onChange={handleChange}
+          required={true}
+          error={errors.email}
+          touched={touched.email}
         />
-        <InputNumberField
+        <InputField
+          type='tel'
           label='Phone Number'
           id='phoneNumber'
-          placeholder='212-456-7890'
+          placeholder='2124567890'
           value={values.phoneNumber}
           onChange={handleChange}
+          required={true}
+          error={errors.phoneNumber}
+          touched={touched.phoneNumber}
         />
       </div>
 
@@ -128,10 +152,13 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           onChange={handleChange}
         />
       </div>
-
-      <button className='form__button' type='submit'>
-        Make Reservation
-      </button>
+      <div className='buttons__container'>
+        <button className='form__button--reset' type='reset' onClick={onFormReset}>Clear Form</button>
+        <button className='form__button--submit' type='submit'>Make Reservation
+        </button>
+      </div>
     </form>
+    {userTour && isModalOpen && <Modal onClose={handleCloseModal} isClosing={isClosing} />}
+    </>
   );
 }

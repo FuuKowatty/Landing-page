@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
   }
 
   &__label {
@@ -32,7 +33,7 @@
   &__textarea {
     padding: $spacing1;
     font-size: $md;
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: $radius1;
   }
 
@@ -54,7 +55,49 @@
     @include button;
     padding: $spacing1 $spacing2;
     font-size: $md;
-    width: fit-content;
-    margin: auto;
+    width: 200px;
+  }
+
+  &__button--submit {
+    @extend .form__button;
+  }
+
+  &__button--reset {
+    @extend .form__button;
+    background-color: $white;
+    border-color: $dark;
+    color: $dark;
+
+    &:hover {
+      background-color: darken($white, 5%);
+    }
+  }
+
+  &__date__container {
+    display: flex;
+    align-items: center;
+    gap: $spacing1;
+  }
+
+  &__required {
+    color: $pink;
+    position: relative;
+  }
+
+  &__error {
+    border: 3px solid $error;
+  }
+}
+
+.buttons__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: $spacing1;
+
+  @include respond-to('very-small') {
+    flex-direction: row;
+    justify-content: center;
   }
 }

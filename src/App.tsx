@@ -6,6 +6,7 @@ import { Reviews } from 'sections/Reviews'
 import { Reservation } from 'sections/Reservation'
 import { useState } from 'react'
 
+export type handleUserTourProps = (name: string | null) => void
 export interface tourProps {
   name: string
   description: string
@@ -70,8 +71,8 @@ const tours = [
 export function App() {
   const [userTour, setUserTour] = useState<tourProps | null>(null)
 
-  const handleUserTour = (name: string) => {
-    setUserTour(tours.filter((tour) => tour.name === name)[0])
+  const handleUserTour = (name: string | null) => {
+    name ? setUserTour(tours.filter((tour) => tour.name === name)[0]) : setUserTour(null)
   }
 
   return (

@@ -1,8 +1,8 @@
-import { tourProps } from 'App'
+import { handleUserTourProps, tourProps } from 'App'
 import { TourCard } from 'components/TourCard'
 import 'sass/style.scss'
 
-export type handleUserTourProps = (name: string) => void
+
 
 export function Explore({
   tours,
