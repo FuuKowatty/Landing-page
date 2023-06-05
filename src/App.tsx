@@ -1,10 +1,10 @@
 import { Navbar } from 'components/Navbar'
 import { Header } from 'sections/Header'
 import { Explore } from 'sections/Explore'
-import { Gallery } from 'components/Gallery'
 import { Reviews } from 'sections/Reviews'
 import { Reservation } from 'sections/Reservation'
 import { useState } from 'react'
+import About from 'sections/About'
 
 export type handleUserTourProps = (name: string | null) => void
 export interface tourProps {
@@ -79,7 +79,7 @@ export function App() {
     <div className='container'>
       <Navbar />
       <Header />
-      <Gallery />
+      <About />
       <Reviews />
       <Explore tours={tours} handleUserTour={handleUserTour} />
       <Reservation

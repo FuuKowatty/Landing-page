@@ -42,10 +42,8 @@ const spliderOptions = {
   arrows: true,
 }
 
-export function Gallery() {
+export function Slider() {
   return (
-    <div className='gallery'>
-      <h1>Our Latest Tours</h1>
       <div className='slider'>
         <Splide
           options={{
@@ -66,6 +64,5 @@ export function Gallery() {
           ))}
         </Splide>
       </div>
-    </div>
   )
 }
