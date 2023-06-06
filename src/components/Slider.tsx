@@ -44,25 +44,21 @@ const spliderOptions = {
 
 export function Slider() {
   return (
-      <div className='slider'>
-        <Splide
-          options={{
-            ...spliderOptions,
-          }}
-          aria-label='React Splide Example'
-        >
-          {images.map((image) => (
-            <SplideSlide key={image.url}>
-              <div className='slide'>
-                <img src={image.url} className='slider__image' alt='image slider' />
-                <div className='slide__content'>
-                  <h2 className='slide__title'>{image.name}</h2>
-                  <p className='slide__description'>{image.description}</p>
-                </div>
+    <div className='slider'>
+      <Splide options={spliderOptions} aria-label='latest tours slider'>
+        {images.map((image) => (
+          <SplideSlide key={image.url}>
+            <div className='slide'>
+              <img src={image.url} className='slider__image' alt='image slider' />
+              <div className='slide__content'>
+                <h2 className='slide__title'>{image.name}</h2>
+                <p className='slide__description'>{image.description}</p>
               </div>
-            </SplideSlide>
-          ))}
-        </Splide>
-      </div>
+            </div>
+          </SplideSlide>
+        ))}
+      </Splide>
+    </div>
   )
 }
+

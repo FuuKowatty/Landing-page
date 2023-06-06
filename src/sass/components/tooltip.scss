@@ -1,25 +1,24 @@
 @use '../abstracts' as *;
 
 .tooltip {
-    color: white;
-    padding: $spacing1;
-    border-radius: 2px;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 35%;
+  color: white;
+  padding: $spacing1;
+  border-radius: 2px;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 35%;
+  background-color: $error;
+  z-index: $z-index-tooltip;
+  font-size: $sm;
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
     background-color: $error;
-    z-index: $z-index-tooltip;
-    font-size: $sm;
-
-    &::before {
-        content: '';
-        width: 8px;
-        height: 8px;
-        background-color: $error;
-        position: absolute;
-        top: -4px;
-        left: 10%;
-        transform: rotate(45deg);
-    }
+    position: absolute;
+    top: -4px;
+    left: 10%;
+    transform: rotate(45deg);
+  }
 }
-

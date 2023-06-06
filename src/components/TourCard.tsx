@@ -1,7 +1,6 @@
 import { handleUserTourProps, tourProps } from 'App'
 import 'sass/style.scss'
 
-
 interface TourCardProps {
   tour: tourProps
   handleUserTour: handleUserTourProps

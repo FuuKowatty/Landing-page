@@ -1,4 +1,3 @@
-
 import { handleUserTourProps, tourProps } from 'App'
 import 'sass/style.scss'
 
