@@ -1,16 +1,11 @@
 @use '../abstracts' as *;
 
 .button {
-  padding: $spacing3 $spacing6;
-  background-color: $dark;
-  color: $white;
-  border-radius: $radius2;
-  border: 1px solid $white;
-  font-size: $lg;
-  font-weight: 700;
-  cursor: pointer;
+  @include button;
+}
 
-  &:hover {
-    background-color: darken($dark, 5%);
-  }
+.button--card {
+  @include button;
+  padding: $spacing1 $spacing2;
+  margin: $spacing2;
 }

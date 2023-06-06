@@ -2,14 +2,15 @@
 $headerIMG: url('../../assets/header.jpg');
 
 // colors
-$white: #f5fefd;
-$lightGray: #e8ebf0;
+$white: #e8ebf0;
 $gray: #c4c4c4;
 $darkGray: #a0a0a0;
 $orange: #ff7f00;
 $transparent: rgba(0, 0, 0, 0.5);
 $dark: #252969;
+$lighter-dark: lighten($dark, 10%);
 $pink: #ff6ec7;
+$error: #c83535;
 
 // font sizes
 $sm: 0.75rem;
@@ -23,6 +24,7 @@ $header2: 2.75rem;
 $header1: 3.25rem;
 $header1: 3.25rem;
 $header0: 4rem;
+$headerxl: 5rem;
 
 // spacing
 $spacing-unit: 8px;
@@ -43,7 +45,7 @@ $z-index-tooltip: 3;
 
 // other
 $radius-unit: 8px;
-$radius: $radius-unit;
+$radius1: $radius-unit;
 $radius2: 1.5 * $radius-unit;
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 $transition-duration: 0.3s;

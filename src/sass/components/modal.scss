@@ -1,0 +1,96 @@
+@use '../abstracts' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+
+  &__open {
+    animation: open 0.3s ease-out;
+  }
+
+  &__close {
+    animation: close 0.4s ease-in; // longer animation cause it ends too fast sometimes
+  }
+
+  h2 {
+    margin-bottom: $spacing1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark;
+    padding: $spacing2;
+    border-radius: $radius1;
+    position: relative;
+    min-height: 200px;
+    border: 1px solid $white;
+
+    @include respond-to('very-small') {
+      width: 500px;
+      padding: $spacing3;
+      aspect-ratio: 2/1;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+    @include button;
+    padding: $spacing1 $spacing3;
+    width: 200px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $spacing2;
+    background-color: $dark;
+    text-align: left;
+
+    th {
+      color: $white;
+      padding: $spacing1;
+      text-align: left;
+      border: 1px solid $white;
+    }
+
+    td {
+      padding: $spacing1;
+      border: 1px solid $white;
+    }
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}

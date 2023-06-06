@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tours {
+  max-width: 300px;
+
+  &__title {
+    margin: $spacing6 0;
+    text-align: center;
+  }
+
+  @include respond-to('very-small') {
+    max-width: 610px;
+  }
+
+  @include respond-to('medium') {
+    max-width: 920px;
+  }
+
+  @include respond-to('huge') {
+    max-width: 1240px;
+  }
+}
