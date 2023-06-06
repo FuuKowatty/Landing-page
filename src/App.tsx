@@ -24,7 +24,7 @@ const tours = [
     price: 2500,
     depart: new Date('2024-03-15'),
     return: new Date('2024-03-28'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/JoD54nu.jpg',
   },
   {
     name: 'Thailand Tropical Paradise',
@@ -32,7 +32,7 @@ const tours = [
     price: 1800,
     depart: new Date('2024-05-10'),
     return: new Date('2024-05-24'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/hKJftRC.jpg',
   },
   {
     name: 'India Cultural Odyssey',
@@ -41,7 +41,7 @@ const tours = [
     price: 2300,
     depart: new Date('2024-07-01'),
     return: new Date('2024-07-15'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/97dyNAe.jpg',
   },
   {
     name: 'Vietnam Ha Long Bay Adventure',
@@ -49,7 +49,7 @@ const tours = [
     price: 1700,
     depart: new Date('2024-09-05'),
     return: new Date('2024-09-18'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/O8q0n75.jpg',
   },
   {
     name: 'South Korea Seoul City Escape',
@@ -57,7 +57,7 @@ const tours = [
     price: 1500,
     depart: new Date('2024-11-15'),
     return: new Date('2024-11-28'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/XQduzmC.jpg',
   },
   {
     name: 'Indonesia Bali Bliss',
@@ -65,7 +65,7 @@ const tours = [
     price: 2000,
     depart: new Date('2025-01-10'),
     return: new Date('2025-01-24'),
-    image: 'https://placehold.co/300x300',
+    image: 'https://i.imgur.com/lBkHWao.jpg',
   },
 ]
 

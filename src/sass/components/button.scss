@@ -7,4 +7,5 @@
 .button--card {
   @include button;
   padding: $spacing1 $spacing2;
+  margin: $spacing2
 }

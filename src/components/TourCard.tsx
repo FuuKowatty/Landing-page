@@ -1,6 +1,6 @@
-import { tourProps } from 'App'
+import { handleUserTourProps, tourProps } from 'App'
 import 'sass/style.scss'
-import { handleUserTourProps } from 'sections/Explore'
+
 
 interface TourCardProps {
   tour: tourProps
