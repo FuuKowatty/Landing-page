@@ -37,7 +37,7 @@ For displaying slides, the project utilizes Splide.js, a lightweight and fast sl
 The main objective of the project is to provide users with the ability to book trips to various Asian countries. Through the website, users can explore different tour options, read reviews, and make reservations for their desired trips. The combination of seamless navigation, user-friendly form validation, and visually engaging slides enhances the overall user experience and simplifies the booking process.
 
 [Project Link:](https://github.com/FuuKowatty/Landing-page) </br>
-[Online](http://pokewiki.bartoszmech.pl/)
+[Online:](http://taw.bartoszmech.pl/) </br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
