@@ -36,6 +36,13 @@
       }
     }
   }
+
+  a {
+    &:hover {
+      color: $pink;
+    }
+  }
+
 }
 
 .closing {

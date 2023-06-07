@@ -5,7 +5,12 @@ import 'sass/style.scss'
 import { Menu } from './Menu'
 import { useViewport } from 'hooks/useViewport'
 
-export function Navbar() {
+export interface pagesProps {
+  id: string;
+  page: string;
+}
+
+export function Navbar({pages} : {pages: pagesProps[]}) {
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 
@@ -37,7 +42,7 @@ export function Navbar() {
           </button>
         )}
       </div>
-      {isMobile ? isVisible && <Menu isClosing={isClosing} /> : <Menu />}
+      {isMobile ? isVisible && <Menu isClosing={isClosing} pages={pages}/> : <Menu pages={pages}/>}
     </div>
   )
 }

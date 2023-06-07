@@ -1,14 +1,20 @@
 import 'sass/style.scss'
+import { pagesProps } from './Navbar';
 
-const pages = ['Home', 'Page2', 'Page3', 'Page4', 'Page5']
+interface MenuProps  { 
+  isClosing?: boolean;
+  pages: pagesProps[];
+}
 
-export function Menu({ isClosing }: { isClosing?: boolean }) {
+export function Menu({ isClosing, pages } : MenuProps) {
   return (
     <div className={`menu ${isClosing ? 'closing' : ''}`}>
       {pages.map((page) => (
-        <p className='menu__item' key={page}>
-          {page}
-        </p>
+        <a href={`#${page.id}`} key={page.id} className='reset__anchor' >
+          <p className='menu__item' >
+            {page.page}
+          </p>
+        </a>
       ))}
     </div>
   )

@@ -27,7 +27,7 @@ const users = [
 
 export function Reviews() {
   return (
-    <div className='reviews__container'>
+    <div className='reviews__container' id='Opinions'>
       <h1 className='reviews__container__title'>What our customers are saying?</h1>
       <div className='reviews'>
         {users.map((user) => {

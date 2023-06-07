@@ -4,26 +4,21 @@ import { InputField } from './InputField'
 import { RadioGenderInputs } from './RadioGenderInputs'
 import { SelectField } from './SelectField'
 import { TextAreaField } from './TextArea'
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect } from 'react'
 import { schema } from 'utils/schema'
 import { Modal } from 'components/Modal'
+import { useModal } from 'hooks/useModal'
 
 export function Form({ userTour, handleUserTour, tourNames }: reservationProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isClosing, setIsClosing] = useState(false)
+  const { isModalOpen, isClosing, openModal, closeModal } = useModal();
 
-  const handleCloseModal = (event: MouseEvent<HTMLButtonElement>) => {
-    setIsClosing(true)
-    onFormReset(event)
-    setTimeout(() => {
-      setIsModalOpen(false)
-      setIsClosing(false)
-    }, 300)
+  const handleCloseModal = () => {
+    closeModal()
   }
 
   const handleOnSubmit = () => {
     if (userTour) {
-      setIsModalOpen(true)
+      openModal()
     }
   }
 

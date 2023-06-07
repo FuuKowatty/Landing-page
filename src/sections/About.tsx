@@ -2,7 +2,7 @@ import { Slider } from 'components/Slider'
 
 export default function About() {
   return (
-    <div className='about'>
+    <div className='about' id='About'>
       <div className='about__content'>
         <h1>About Us</h1>
         <p className='about__description'>

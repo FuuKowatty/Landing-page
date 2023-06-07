@@ -11,7 +11,7 @@ export interface reservationProps {
 
 export function Reservation({ userTour, handleUserTour, tourNames }: reservationProps) {
   return (
-    <div className='reservation'>
+    <div className='reservation' id='Reservation'>
       <h2>Make Reservation</h2>
       <Form userTour={userTour} tourNames={tourNames} handleUserTour={handleUserTour} />
     </div>

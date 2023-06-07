@@ -34,7 +34,7 @@ export function Explore({
   handleUserTour: handleUserTourProps
 }) {
   return (
-    <div className='explore'>
+    <div className='explore' id='Explore'>
       <h1 className='tours__title'>Explore</h1>
       <div className='tours'>
       <Splide

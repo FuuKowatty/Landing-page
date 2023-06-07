@@ -1,3 +1,4 @@
+import { FormEvent } from 'react'
 import {
   AiFillInstagram,
   AiOutlineTwitter,
@@ -6,6 +7,8 @@ import {
   AiFillLinkedin,
 } from 'react-icons/ai'
 import { FaTiktok, FaGooglePlusG, FaFacebookF } from 'react-icons/fa'
+import { Modal } from './Modal'
+import { useModal } from 'hooks/useModal'
 
 const SocialMedia = [
   {
@@ -53,7 +56,17 @@ const Contact = [
   },
 ]
 
+
+
 export function Footer() {
+  const { isModalOpen, isClosing, openModal, closeModal } = useModal();
+
+  const handleNewsletterSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    openModal();
+  }
+
   return (
     <footer className='footer'>
       <div className='footer__content'>
@@ -81,12 +94,13 @@ export function Footer() {
         </div>
         <div className='footer__section--newsletter'>
           <h2 className='footer__section--title'>Newsletter</h2>
-          <form className='footer__newsletter'>
+          <form className='footer__newsletter' onSubmit={handleNewsletterSubmit}>
             <input
-              type='text'
+              type='email'
               aria-label='newsletter'
               className='footer__input'
               placeholder='enter a email'
+              required
             />
             <button className='footer__button'>Subscribe</button>
           </form>
@@ -100,6 +114,7 @@ export function Footer() {
           <li>Terms & Conditions</li>
         </ul>
       </div>
+      {isModalOpen && <Modal onClose={closeModal} isClosing={isClosing} />}
     </footer>
   )
 }
