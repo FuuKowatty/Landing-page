@@ -1,9 +1,13 @@
-// colors 
-$white: #F5FEFD;
-$lightGray: #c4c4c4;
-$gray: #b2b2b2;
+// colors
+$white: #e8ebf0;
+$gray: #c4c4c4;
 $darkGray: #a0a0a0;
-$orange: #ffa500;
+$orange: #ff7f00;
+$transparent: rgba(0, 0, 0, 0.5);
+$dark: #252969;
+$lighter-dark: lighten($dark, 10%);
+$pink: #ff6ec7;
+$error: #ffa500;
 
 // font sizes
 $sm: 0.75rem;
@@ -11,23 +15,32 @@ $md: 1rem;
 $lg: 1.25rem;
 $xl: 1.5rem;
 
-  // headers
-  $header3: 2.25rem;
-  $header2: 2.75rem;
-  $header1: 3.25rem;
+// headers
+$header3: 2.25rem;
+$header2: 2.75rem;
+$header1: 3.25rem;
+$header1: 3.25rem;
+$header0: 4rem;
+$headerxl: 5rem;
 
 // spacing
 $spacing-unit: 8px;
 $spacing1: $spacing-unit;
 $spacing2: 2 * $spacing-unit;
 $spacing3: 3 * $spacing-unit;
+$spacing4: 4 * $spacing-unit;
+$spacing: 5 * $spacing-unit;
+$spacing6: 6 * $spacing-unit;
+$spacing7: 7 * $spacing-unit;
+$spacing8: 8 * $spacing-unit;
+$spacing9: 9 * $spacing-unit;
 
 // z-index
-$z-index-dropdown: 1;
 $z-index-modal: 2;
 $z-index-tooltip: 3;
 
 // other
-$radius: 8px;
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$radius-unit: 8px;
+$radius1: $radius-unit;
+$radius2: 1.5 * $radius-unit;
 $transition-duration: 0.3s;

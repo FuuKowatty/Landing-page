@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 80px;
+  padding: $spacing3;
+  background: $dark;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  font-size: $md;
+  border-bottom: 1px solid $pink;
+
+  @include respond-to('very-small') {
+    justify-content: center;
+  }
+
+  @include respond-to('small') {
+    justify-content: space-between;
+  }
+
+  @include respond-to('medium') {
+    font-size: $lg;
+    height: 100px;
+  }
+
+  &__mobile {
+    @include respond-to('very-small') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include respond-to('very-small') {
+      display: none;
+    }
+
+    @include respond-to('small') {
+      display: block;
+    }
+  }
+}

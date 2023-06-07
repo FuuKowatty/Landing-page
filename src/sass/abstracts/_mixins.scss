@@ -1,0 +1,38 @@
+@use './variables' as *;
+@use './media-queries' as *;
+
+@mixin button {
+  padding: $spacing3 $spacing6;
+  background-color: $dark;
+  color: $white;
+  border-radius: $radius2;
+  border: 1px solid $white;
+  font-size: $lg;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($dark, 5%);
+  }
+}
+
+@mixin calculateHeight {
+  min-height: calc(100vh - 80px);
+
+  @include respond-to('medium') {
+    min-height: calc(100vh - 100px);
+  }
+
+  @include respond-to('large') {
+    min-height: calc(100vh - 100px);
+  }
+}
+
+@mixin newsletter-items {
+  max-width: 350px;
+  width: 100%;
+  padding: $spacing1 $spacing2;
+  border: 1px solid $white;
+  border-radius: $radius1;
+  font-size: $md;
+}

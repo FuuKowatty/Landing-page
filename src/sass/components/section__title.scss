@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.section__title {
+  font-size: $header3;
+  text-align: center;
+  margin-bottom: $spacing3;
+}

@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+
+.menu {
+  position: absolute;
+  padding: $spacing2;
+  padding-top: 0;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: $dark;
+  text-align: center;
+  opacity: 0;
+  animation: fade-in 0.3s ease-in forwards;
+
+  @include respond-to('very-small') {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: $spacing2;
+    padding: 0;
+    width: auto;
+  }
+
+  &__item {
+    padding: $spacing2;
+    border-bottom: 1px solid white;
+    @include respond-to('very-small') {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    display: block;
+    &:hover {
+      color: $pink;
+    }
+
+    &:first-child {
+      border-top: 1px solid $white;
+    }
+
+    @include respond-to('very-small') {
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+}
+
+.closing {
+  animation: fade-out 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.active {
+  color: $pink;
+}

@@ -1,0 +1,79 @@
+@use '../abstracts' as *;
+
+.slider {
+  position: relative;
+  aspect-ratio: 6/4;
+  overflow: hidden;
+  background-color: $pink;
+  border: 3px solid $error;
+  border-radius: $radius2;
+  display: flex;
+
+  @include respond-to('very-small') {
+    max-width: 550px;
+  }
+
+  @include respond-to('medium') {
+    max-width: 45%;
+  }
+
+  @include respond-to('large') {
+    max-width: 50%;
+  }
+
+  @include respond-to('huge') {
+    aspect-ratio: 2/1;
+  }
+
+  &__image {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    filter: brightness(60%);
+  }
+}
+
+.slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &__content {
+    width: 100%;
+    position: absolute;
+    padding: $spacing1;
+    bottom: 20px;
+    left: 0;
+
+    @include respond-to('huge') {
+      bottom: 120px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include respond-to('very-small') {
+      font-size: $header3;
+    }
+
+    @include respond-to('very-small') {
+      font-size: $header3;
+    }
+  }
+
+  &__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @include respond-to('very-small') {
+      font-size: $lg;
+      text-align: center;
+    }
+
+    @include respond-to('huge') {
+      font-size: $lg;
+    }
+  }
+}
