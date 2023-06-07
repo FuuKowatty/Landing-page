@@ -47,24 +47,24 @@ const tours = [
     price: 2500,
     depart: new Date('2024-03-15'),
     return: new Date('2024-03-28'),
-    image: 'https://i.imgur.com/JoD54nu.jpg',
+    image: 'https://i.imgur.com/lih5zht.jpg',
   },
   {
     name: 'Thailand Tropical Paradise',
-    description: "Discover the exotic wonders of Thailand's stunning islands.",
+    description: 'Discover the exotic wonders of Thailand\'s stunning islands.',
     price: 1800,
     depart: new Date('2024-05-10'),
     return: new Date('2024-05-24'),
-    image: 'https://i.imgur.com/hKJftRC.jpg',
+    image: 'https://i.imgur.com/wCuk0g5.jpg',
   },
   {
     name: 'India Cultural Odyssey',
     description:
-      "Embark on a cultural journey through India's ancient landmarks and diverse cities.",
+      'Embark on a cultural journey through India\'s ancient landmarks and diverse cities.',
     price: 2300,
     depart: new Date('2024-07-01'),
     return: new Date('2024-07-15'),
-    image: 'https://i.imgur.com/97dyNAe.jpg',
+    image: 'https://i.imgur.com/vc9WZgR.jpg',
   },
   {
     name: 'Vietnam Ha Long Bay Adventure',
@@ -72,15 +72,15 @@ const tours = [
     price: 1700,
     depart: new Date('2024-09-05'),
     return: new Date('2024-09-18'),
-    image: 'https://i.imgur.com/O8q0n75.jpg',
+    image: 'https://i.imgur.com/ihrzeHG.jpg',
   },
   {
     name: 'South Korea Seoul City Escape',
-    description: "Experience the dynamic energy of Seoul, South Korea's capital.",
+    description: 'Experience the dynamic energy of Seoul, South Korea\'s capital.',
     price: 1500,
     depart: new Date('2024-11-15'),
     return: new Date('2024-11-28'),
-    image: 'https://i.imgur.com/XQduzmC.jpg',
+    image: 'https://i.imgur.com/ui3PtXl.jpg',
   },
   {
     name: 'Indonesia Bali Bliss',
@@ -88,7 +88,7 @@ const tours = [
     price: 2000,
     depart: new Date('2025-01-10'),
     return: new Date('2025-01-24'),
-    image: 'https://i.imgur.com/lBkHWao.jpg',
+    image: 'https://i.imgur.com/YkXblLr.jpg',
   },
 ]
 
