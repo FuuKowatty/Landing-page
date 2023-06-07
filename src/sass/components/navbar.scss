@@ -35,12 +35,23 @@
   }
 
   &__logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
     @include respond-to('very-small') {
       display: none;
     }
 
     @include respond-to('small') {
       display: block;
+      width: 64px;
+      height: 64px;
     }
   }
 }
