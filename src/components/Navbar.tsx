@@ -6,11 +6,11 @@ import { Menu } from './Menu'
 import { useViewport } from 'hooks/useViewport'
 
 export interface pagesProps {
-  id: string;
-  page: string;
+  id: string
+  page: string
 }
 
-export function Navbar({pages} : {pages: pagesProps[]}) {
+export function Navbar({ pages }: { pages: pagesProps[] }) {
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 
@@ -42,7 +42,11 @@ export function Navbar({pages} : {pages: pagesProps[]}) {
           </button>
         )}
       </div>
-      {isMobile ? isVisible && <Menu isClosing={isClosing} pages={pages}/> : <Menu pages={pages}/>}
+      {isMobile ? (
+        isVisible && <Menu isClosing={isClosing} pages={pages} />
+      ) : (
+        <Menu pages={pages} />
+      )}
     </div>
   )
 }

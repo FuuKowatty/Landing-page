@@ -3,7 +3,6 @@ import { handleUserTourProps, tourProps } from 'App'
 import { TourCard } from 'components/TourCard'
 import 'sass/style.scss'
 
-
 const spliderOptions = {
   type: 'loop',
   role: 'carousel',
@@ -22,8 +21,8 @@ const spliderOptions = {
     },
     1500: {
       perPage: 4,
-    }
-  }
+    },
+  },
 }
 
 export function Explore({
@@ -37,19 +36,21 @@ export function Explore({
     <div className='explore' id='Explore'>
       <h2 className='section__title'>Explore</h2>
       <div className='tours'>
-      <Splide
-          options={spliderOptions}
-        >
-            {tours.map((tour) => {
-              return (
-                <SplideSlide key={tour.name}>
-                  <TourCard tour={tour} handleUserTour={handleUserTour} />
-                </SplideSlide>
-              )
-            })}
-        {tours.map((tour) => {
-          return <SplideSlide key={tour.name}><TourCard tour={tour} handleUserTour={handleUserTour} /></SplideSlide>
-        })}
+        <Splide options={spliderOptions}>
+          {tours.map((tour) => {
+            return (
+              <SplideSlide key={tour.name}>
+                <TourCard tour={tour} handleUserTour={handleUserTour} />
+              </SplideSlide>
+            )
+          })}
+          {tours.map((tour) => {
+            return (
+              <SplideSlide key={tour.name}>
+                <TourCard tour={tour} handleUserTour={handleUserTour} />
+              </SplideSlide>
+            )
+          })}
         </Splide>
       </div>
     </div>

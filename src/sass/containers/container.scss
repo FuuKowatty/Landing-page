@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing6;
 }

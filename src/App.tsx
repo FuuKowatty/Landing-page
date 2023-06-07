@@ -20,23 +20,23 @@ export interface tourProps {
 const pages = [
   {
     id: 'Home',
-    page: 'Home'
+    page: 'Home',
   },
   {
     id: 'About',
-    page: 'About Us'
+    page: 'About Us',
   },
   {
     id: 'Opinions',
-    page: 'Opinions'
+    page: 'Opinions',
   },
   {
     id: 'Explore',
-    page: 'Explore'
+    page: 'Explore',
   },
   {
     id: 'Reservation',
-    page: 'Reservation'
+    page: 'Reservation',
   },
 ]
 
@@ -51,7 +51,7 @@ const tours = [
   },
   {
     name: 'Thailand Tropical Paradise',
-    description: 'Discover the exotic wonders of Thailand\'s stunning islands.',
+    description: "Discover the exotic wonders of Thailand's stunning islands.",
     price: 1800,
     depart: new Date('2024-05-10'),
     return: new Date('2024-05-24'),
@@ -60,7 +60,7 @@ const tours = [
   {
     name: 'India Cultural Odyssey',
     description:
-      'Embark on a cultural journey through India\'s ancient landmarks and diverse cities.',
+      "Embark on a cultural journey through India's ancient landmarks and diverse cities.",
     price: 2300,
     depart: new Date('2024-07-01'),
     return: new Date('2024-07-15'),
@@ -76,7 +76,7 @@ const tours = [
   },
   {
     name: 'South Korea Seoul City Escape',
-    description: 'Experience the dynamic energy of Seoul, South Korea\'s capital.',
+    description: "Experience the dynamic energy of Seoul, South Korea's capital.",
     price: 1500,
     depart: new Date('2024-11-15'),
     return: new Date('2024-11-28'),

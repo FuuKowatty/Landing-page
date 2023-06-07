@@ -48,12 +48,8 @@
       grid-column: 2 / span 3;
       padding: $spacing4 $spacing8;
     }
-  
-  
   }
-
 }
-
 
 .header_img_author {
   position: absolute;
@@ -72,7 +68,8 @@
 }
 
 @-webkit-keyframes breathing {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
@@ -89,7 +86,8 @@
 }
 
 @keyframes breathing {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(0.9);
   }
 
@@ -102,4 +100,3 @@
     transform: scale(0.9);
   }
 }
-

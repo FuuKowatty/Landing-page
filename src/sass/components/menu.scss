@@ -29,7 +29,6 @@
     }
   }
 
-
   a {
     display: block;
     &:hover {
@@ -44,14 +43,9 @@
       &:first-child {
         border-top: none;
       }
-
     }
   }
 }
-
-
-
-
 
 .closing {
   animation: fade-out 0.3s ease-out forwards;

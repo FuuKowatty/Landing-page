@@ -56,15 +56,13 @@ const Contact = [
   },
 ]
 
-
-
 export function Footer() {
-  const { isModalOpen, isClosing, openModal, closeModal } = useModal();
+  const { isModalOpen, isClosing, openModal, closeModal } = useModal()
 
   const handleNewsletterSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    event.currentTarget.reset();
-    openModal();
+    event.preventDefault()
+    event.currentTarget.reset()
+    openModal()
   }
 
   return (

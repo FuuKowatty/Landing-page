@@ -10,7 +10,7 @@ import { Modal } from 'components/Modal'
 import { useModal } from 'hooks/useModal'
 
 export function Form({ userTour, handleUserTour, tourNames }: reservationProps) {
-  const { isModalOpen, isClosing, openModal, closeModal } = useModal();
+  const { isModalOpen, isClosing, openModal, closeModal } = useModal()
 
   const handleCloseModal = () => {
     closeModal()
