@@ -33,7 +33,7 @@ export function Explore({
   handleUserTour: handleUserTourProps
 }) {
   return (
-    <div className='explore' id='Explore'>
+    <section className='explore' id='Explore'>
       <h2 className='section__title'>Explore</h2>
       <div className='tours'>
         <Splide options={spliderOptions}>
@@ -53,6 +53,6 @@ export function Explore({
           })}
         </Splide>
       </div>
-    </div>
+    </section>
   )
 }

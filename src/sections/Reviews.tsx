@@ -27,7 +27,7 @@ const users = [
 
 export function Reviews() {
   return (
-    <div className='reviews__container' id='Opinions'>
+    <section className='reviews__container' id='Opinions'>
       <h2 className='section__title'>What our customers are saying?</h2>
       <div className='reviews'>
         {users.map((user) => {
@@ -36,6 +36,6 @@ export function Reviews() {
           return <Review key={name} name={name} image={image} rate={rate} comment={comment} />
         })}
       </div>
-    </div>
+    </section>
   )
 }

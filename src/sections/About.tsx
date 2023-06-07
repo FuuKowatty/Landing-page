@@ -2,7 +2,7 @@ import { Slider } from 'components/Slider'
 
 export default function About() {
   return (
-    <div className='about' id='About'>
+    <section className='about' id='About'>
       <div className='about__content'>
         <h2 className='section__title'>About Us</h2>
         <p className='about__description'>
@@ -15,6 +15,6 @@ export default function About() {
         </p>
       </div>
       <Slider />
-    </div>
+    </section>
   )
 }

@@ -12,7 +12,8 @@ import { useModal } from 'hooks/useModal'
 export function Form({ userTour, handleUserTour, tourNames }: reservationProps) {
   const { isModalOpen, isClosing, openModal, closeModal } = useModal()
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (event: MouseEvent<HTMLButtonElement>) => {
+    onFormReset(event)
     closeModal()
   }
 
