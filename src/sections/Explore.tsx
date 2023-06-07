@@ -35,7 +35,7 @@ export function Explore({
 }) {
   return (
     <div className='explore' id='Explore'>
-      <h1 className='tours__title'>Explore</h1>
+      <h2 className='section__title'>Explore</h2>
       <div className='tours'>
       <Splide
           options={spliderOptions}

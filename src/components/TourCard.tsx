@@ -17,9 +17,11 @@ export function TourCard({ tour, handleUserTour }: TourCardProps) {
         <p className='tour-card__description'>{description}</p>
       </div>
       <div className='tour-card__price'>Price: ${price}</div>
-      <button className='button--card' onClick={() => handleUserTour(tour.name)}>
+
+     
+        <a href='#Reservation' className='tour-card__button reset__anchor' role='button' onClick={() => handleUserTour(tour.name)}>
         Book Now
-      </button>
+</a>
     </div>
   )
 }

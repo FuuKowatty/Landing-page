@@ -1,5 +1,6 @@
 import 'sass/style.scss'
 import { pagesProps } from './Navbar';
+import { Link } from 'react-scroll';
 
 interface MenuProps  { 
   isClosing?: boolean;
@@ -7,15 +8,23 @@ interface MenuProps  {
 }
 
 export function Menu({ isClosing, pages } : MenuProps) {
+
   return (
-    <div className={`menu ${isClosing ? 'closing' : ''}`}>
+    <nav className={`menu ${isClosing ? 'closing' : ''}`}>
       {pages.map((page) => (
-        <a href={`#${page.id}`} key={page.id} className='reset__anchor' >
-          <p className='menu__item' >
-            {page.page}
-          </p>
-        </a>
+        <Link
+        to={page.id}
+        smooth={true}
+        spy={true}
+        duration={500}
+        key={page.id}
+        offset={-100}
+        className='reset__anchor'
+        activeClass="active"
+      >
+        <p className='menu__item'>{page.page}</p>
+      </Link>
       ))}
-    </div>
+    </nav>
   )
 }

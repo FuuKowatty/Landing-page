@@ -71,7 +71,7 @@ export function Footer() {
     <footer className='footer'>
       <div className='footer__content'>
         <div className='footer__section'>
-          <h2 className='footer__section--title'>Keep Connected</h2>
+          <p className='footer__section--title'>Keep Connected</p>
           <ul>
             {SocialMedia.map((platform) => (
               <li key={platform.id}>
@@ -82,7 +82,7 @@ export function Footer() {
           </ul>
         </div>
         <div className='footer__section'>
-          <h2 className='footer__section--title'>Contact Information</h2>
+          <p className='footer__section--title'>Contact Information</p>
           <ul>
             {Contact.map((contact) => (
               <li key={contact.id}>
@@ -93,7 +93,7 @@ export function Footer() {
           </ul>
         </div>
         <div className='footer__section--newsletter'>
-          <h2 className='footer__section--title'>Newsletter</h2>
+          <p className='footer__section--title'>Newsletter</p>
           <form className='footer__newsletter' onSubmit={handleNewsletterSubmit}>
             <input
               type='email'

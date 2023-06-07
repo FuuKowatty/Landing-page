@@ -23,27 +23,35 @@
 
   &__item {
     padding: $spacing2;
-    border-bottom: 1px solid $pink;
-
-    &:first-child {
-      border-top: 1px solid $pink;
-    }
-
+    border-bottom: 1px solid white;
     @include respond-to('very-small') {
-      border: none;
-      &:first-child {
-        border-top: none;
-      }
+      border-bottom: none;
     }
   }
 
+
   a {
+    display: block;
     &:hover {
       color: $pink;
     }
-  }
 
+    &:first-child {
+      border-top: 1px solid $white;
+    }
+
+    @include respond-to('very-small') {
+      &:first-child {
+        border-top: none;
+      }
+
+    }
+  }
 }
+
+
+
+
 
 .closing {
   animation: fade-out 0.3s ease-out forwards;
@@ -69,4 +77,8 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+.active {
+  color: $pink;
 }

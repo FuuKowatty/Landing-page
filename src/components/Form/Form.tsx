@@ -56,7 +56,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
     <>
       <form className='form' onSubmit={handleSubmit}>
         <div className='form__section'>
-          <h4 className='form__section-title'>Personal Information</h4>
+          <h3 className='form__section-title'>Personal Information</h3>
           <InputField
             label='First Name'
             id='firstName'
@@ -87,7 +87,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
         </div>
 
         <div className='form__section'>
-          <h4 className='form__section-title'>Pick your holiday</h4>
+          <h3 className='form__section-title'>Pick your holiday</h3>
           <SelectField
             label='Holiday'
             id='holiday'
@@ -118,7 +118,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
         </div>
 
         <div className='form__section'>
-          <h4 className='form__section-title'>Contact</h4>
+          <h3 className='form__section-title'>Contact</h3>
           <InputField
             label='Email'
             id='email'
@@ -143,7 +143,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
         </div>
 
         <div className='form__section'>
-          <h4 className='form__section-title'>Additional Information</h4>
+          <h3 className='form__section-title'>Additional Information</h3>
           <TextAreaField
             label='Label Text'
             id='additionalInformation'

@@ -38,4 +38,11 @@
     margin-top: auto;
     padding: 0 $spacing2;
   }
+
+  &__button {
+    @include button;
+    padding: $spacing1 $spacing2;
+    margin: $spacing2;
+    text-align: center;
+  }
 }

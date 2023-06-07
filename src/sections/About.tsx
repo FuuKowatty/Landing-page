@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className='about' id='About'>
       <div className='about__content'>
-        <h1>About Us</h1>
+        <h2 className='section__title'>About Us</h2>
         <p className='about__description'>
           {' '}
           we specialize in providing unforgettable tour experiences across various Asian countries.

@@ -5,7 +5,7 @@ export function Header() {
     <div className='header' id='Home'>
       <h1 className='header__text'>Travel around the world!</h1>
       
-      <a href='#Reservation' className='button--menu reset__anchor' role='button' >
+      <a href='#Reservation' className='header__button reset__anchor breathing__animation' role='button' >
   Sign Up
 </a>
      

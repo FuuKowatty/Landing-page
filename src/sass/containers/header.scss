@@ -2,6 +2,7 @@
 @use '../components' as *;
 
 .header {
+  margin-top: -$spacing6;
   padding: $spacing3;
   font-family: 'Montserrat', sans-serif;
   display: grid;
@@ -39,16 +40,20 @@
       font-size: $headerxl;
     }
   }
-}
-
-.button--menu {
-  @include button;
-
-  @include respond-to('large') {
-    grid-column: 2 / span 3;
-    padding: $spacing4 $spacing8;
+  &__button {
+    @include button;
+    background-color: darken($dark, 10%);
+    border: none;
+    @include respond-to('large') {
+      grid-column: 2 / span 3;
+      padding: $spacing4 $spacing8;
+    }
+  
+  
   }
+
 }
+
 
 .header_img_author {
   position: absolute;
@@ -59,3 +64,42 @@
   font-weight: normal;
   text-decoration: none;
 }
+
+.breathing__animation {
+  -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@-webkit-keyframes breathing {
+  0%, 100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(0.9);
+  }
+
+  25%,
+  75% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+}
+

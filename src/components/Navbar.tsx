@@ -30,7 +30,7 @@ export function Navbar({pages} : {pages: pagesProps[]}) {
 
   return (
     <div className='navbar'>
-      Navbar
+      <span className='navbar__logo'>logo</span>
       <div className='navbar__mobile'>
         {isVisible ? (
           <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose}>

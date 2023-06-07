@@ -5,6 +5,12 @@
 
   &__section {
     width: 100%;
+
+    &--title {
+      text-align: center;
+      margin: $spacing4 0 $spacing2 0;
+      font-size: $xl;
+    }
   }
 
   &__content {
@@ -54,11 +60,6 @@
     }
   }
 
-  &__section--title {
-    text-align: center;
-    margin: $spacing4 0 $spacing2 0;
-  }
-
   &__section--newsletter {
     width: 100%;
 
@@ -86,6 +87,7 @@
   }
 
   &__button {
+    @include button;
     @include newsletter-items();
     background-color: $dark;
     color: $white;
