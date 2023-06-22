@@ -5,3 +5,9 @@ body {
   background: $dark;
   color: $white;
 }
+
+fieldset {
+  border: none;
+  font-weight: bold;
+  margin-bottom: $spacing2;
+}

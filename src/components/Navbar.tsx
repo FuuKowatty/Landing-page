@@ -29,7 +29,7 @@ export function Navbar({ pages }: { pages: pagesProps[] }) {
   }
 
   return (
-    <div className='navbar'>
+    <nav className='navbar'>
       <span className='navbar__logo'>
         <img src='https://www.svgrepo.com/show/502438/travel.svg' alt='logo' />
       </span>
@@ -49,6 +49,6 @@ export function Navbar({ pages }: { pages: pagesProps[] }) {
       ) : (
         <Menu pages={pages} />
       )}
-    </div>
+    </nav>
   )
 }

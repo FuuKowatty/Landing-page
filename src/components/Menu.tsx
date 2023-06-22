@@ -10,20 +10,21 @@ interface MenuProps {
 export function Menu({ isClosing, pages }: MenuProps) {
 
   return (
-    <nav className={`menu ${isClosing ? 'closing' : ''}`}>
+    <menu className={`menu ${isClosing ? 'closing' : ''}`}>
       {pages.map((page) => (
-        <Link
-          to={page.id}
-          spy={true}
-          duration={500}
-          key={page.id}
-          offset={-100}
-          className='reset__anchor'
-          activeClass='active'
-        >
-          <p className='menu__item'>{page.page}</p>
-        </Link>
+        <li key={page.id}>
+          <Link
+            to={page.id}
+            spy={true}
+            duration={500}
+            offset={-100}
+            className='reset__anchor'
+            activeClass='active'
+          >
+            <p className='menu__item'>{page.page}</p>
+          </Link>
+        </li>
       ))}
-    </nav>
+    </menu>
   )
 }

@@ -100,7 +100,7 @@ export function App() {
   }
 
   return (
-    <div className='container'>
+    <main className='container'>
       <Navbar pages={pages} />
       <Header />
       <About />
@@ -112,6 +112,6 @@ export function App() {
         handleUserTour={handleUserTour}
       />
       <Footer />
-    </div>
+    </main>
   )
 }

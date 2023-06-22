@@ -56,8 +56,8 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
   return (
     <>
       <form className='form' onSubmit={handleSubmit}>
-        <div className='form__section'>
-          <h3 className='form__section-title'>Personal Information</h3>
+        <fieldset className='form__section'>
+          <legend className='form__section-title'>Personal Information</legend>
           <InputField
             label='First Name'
             id='firstName'
@@ -85,10 +85,10 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             error={errors.gender}
             touched={touched.gender}
           />
-        </div>
+        </fieldset>
 
-        <div className='form__section'>
-          <h3 className='form__section-title'>Pick your holiday</h3>
+        <fieldset className='form__section'>
+          <legend className='form__section-title'>Pick your holiday</legend>
           <SelectField
             label='Holiday'
             id='holiday'
@@ -116,10 +116,10 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
               readonly={true}
             />
           </div>
-        </div>
+        </fieldset>
 
-        <div className='form__section'>
-          <h3 className='form__section-title'>Contact</h3>
+        <fieldset className='form__section'>
+          <legend className='form__section-title'>Contact</legend>
           <InputField
             label='Email'
             id='email'
@@ -141,10 +141,10 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             error={errors.phoneNumber}
             touched={touched.phoneNumber}
           />
-        </div>
+        </fieldset>
 
-        <div className='form__section'>
-          <h3 className='form__section-title'>Additional Information</h3>
+        <fieldset className='form__section'>
+          <legend className='form__section-title'>Additional Information</legend>
           <TextAreaField
             label='Label Text'
             id='additionalInformation'
@@ -152,7 +152,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             value={values.additionalInformation}
             onChange={handleChange}
           />
-        </div>
+        </fieldset>
         <div className='buttons__container'>
           <button className='form__button--reset' type='reset' onClick={onFormReset}>
             Clear Form
