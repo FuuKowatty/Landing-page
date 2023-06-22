@@ -8,12 +8,12 @@ interface MenuProps {
 }
 
 export function Menu({ isClosing, pages }: MenuProps) {
+
   return (
     <nav className={`menu ${isClosing ? 'closing' : ''}`}>
       {pages.map((page) => (
         <Link
           to={page.id}
-          smooth={true}
           spy={true}
           duration={500}
           key={page.id}
