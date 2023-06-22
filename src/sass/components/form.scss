@@ -3,7 +3,7 @@
 .form {
   display: flex;
   flex-direction: column;
-
+  padding: 0 $spacing2;
   gap: $spacing3;
 
   &__section {
