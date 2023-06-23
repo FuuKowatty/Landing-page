@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
 
-export const useViewport = () => {
-  const [width, setWidth] = useState(window.innerWidth)
+interface Viewport {
+  browserWidth: number;
+  isMobile: boolean;
+  isTablet: boolean;
+}
+
+export const useViewport = (): Viewport => {
+  const [width, setWidth] = useState<number>(window.innerWidth)
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth)
@@ -9,8 +15,9 @@ export const useViewport = () => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const browserWidth = width
-  const isMobile = width < 600
-  const isTablet = width < 1000
+  const browserWidth: number = width
+  const isMobile: boolean = width < 600
+  const isTablet: boolean = width < 1000
+
   return { browserWidth, isMobile, isTablet }
 }

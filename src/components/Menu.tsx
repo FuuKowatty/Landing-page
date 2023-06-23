@@ -1,10 +1,9 @@
 import 'sass/style.scss'
-import { pagesProps } from './Navbar'
 import { Link } from 'react-scroll'
 
 interface MenuProps {
   isClosing?: boolean
-  pages: pagesProps[]
+  pages: MenuItemProps[]
 }
 
 export function Menu({ isClosing, pages }: MenuProps) {
@@ -28,3 +27,4 @@ export function Menu({ isClosing, pages }: MenuProps) {
     </menu>
   )
 }
+

@@ -7,16 +7,6 @@ import { useState } from 'react'
 import About from 'sections/About'
 import { Footer } from 'components/Footer'
 
-export type handleUserTourProps = (name: string | null) => void
-export interface tourProps {
-  name: string
-  description: string
-  price: number
-  depart: Date
-  return: Date
-  image: string
-}
-
 const pages = [
   {
     id: 'Home',

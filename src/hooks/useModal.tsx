@@ -1,14 +1,21 @@
 import { useState } from 'react'
 
-export const useModal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isClosing, setIsClosing] = useState(false)
+interface Modal {
+  isModalOpen: boolean;
+  isClosing: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}
 
-  const openModal = () => {
+export const useModal = (): Modal => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [isClosing, setIsClosing] = useState<boolean>(false)
+
+  const openModal = (): void => {
     setIsModalOpen(true)
   }
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setIsClosing(true)
 
     setTimeout(() => {
