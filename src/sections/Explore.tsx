@@ -1,5 +1,4 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { handleUserTourProps, tourProps } from 'App'
 import { TourCard } from 'components/TourCard'
 import 'sass/style.scss'
 

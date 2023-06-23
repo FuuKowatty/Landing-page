@@ -1,5 +1,4 @@
 import { useFormik } from 'formik'
-import { reservationProps } from 'sections/Reservation'
 import { InputField } from './InputField'
 import { RadioGenderInputs } from './RadioGenderInputs'
 import { SelectField } from './SelectField'

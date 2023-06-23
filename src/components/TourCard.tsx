@@ -1,4 +1,3 @@
-import { handleUserTourProps, tourProps } from 'App'
 import { Link } from 'react-scroll';
 import 'sass/style.scss'
 
