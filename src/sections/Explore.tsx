@@ -1,5 +1,6 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { TourCard } from 'components/TourCard'
+import { tours, useTourContext } from 'context/TourProvider'
 import 'sass/style.scss'
 
 const spliderOptions = {
@@ -23,30 +24,36 @@ const spliderOptions = {
   },
 }
 
-export function Explore({
-  tours,
-  handleUserTour,
-}: {
-  tours: tourProps[]
-  handleUserTour: handleUserTourProps
-}) {
+export function Explore() {
+
+  const {handleUserTour} = useTourContext()
+
+
+
   return (
     <section className='explore' id='Explore'>
       <h2 className='section__title'>Explore</h2>
       <div className='tours'>
         <Splide options={spliderOptions} hasTrack={false}>
-        <SplideTrack>
-          {tours.map((tour) => {
-            return (
+          <SplideTrack>
+            {tours.map((tour) => {
+              return (
                 <SplideSlide key={tour.name}>
                   <TourCard tour={tour} handleUserTour={handleUserTour} />
                 </SplideSlide>
-            )
-          })}
+              )
+            })}
           </SplideTrack>
           <div className='splide__arrows'>
-            <button style={{padding: '25px'}} className='splide__arrow splide__arrow--prev slider__arrow'>{'<'}</button>
-            <button style={{padding: '25px'}} className='splide__arrow splide__arrow--next'>{'>'}</button>
+            <button
+              style={{ padding: '25px' }}
+              className='splide__arrow splide__arrow--prev slider__arrow'
+            >
+              {'<'}
+            </button>
+            <button style={{ padding: '25px' }} className='splide__arrow splide__arrow--next'>
+              {'>'}
+            </button>
           </div>
         </Splide>
       </div>

@@ -1,9 +1,12 @@
+import { HandleUserTour } from 'entities/handlers'
+import { Tour } from 'entities/tour'
 import { Link } from 'react-scroll'
 import 'sass/style.scss'
+import { SCROLL_DURATION, SCROLL_OFFSET } from 'utils/constants'
 
 interface TourCardProps {
-  tour: tourProps
-  handleUserTour: handleUserTourProps
+  tour: Tour
+  handleUserTour: HandleUserTour
 }
 
 export function TourCard({ tour, handleUserTour }: TourCardProps) {
@@ -20,11 +23,11 @@ export function TourCard({ tour, handleUserTour }: TourCardProps) {
 
       <Link
         to={'reservation'}
-        smooth={true}
-        spy={true}
-        duration={500}
+        smooth
+        spy
+        duration={SCROLL_DURATION}
         role='button'
-        offset={-100}
+        offset={SCROLL_OFFSET}
         className='tour-card__button reset__anchor'
         onClick={() => handleUserTour(tour.name)}
       >
