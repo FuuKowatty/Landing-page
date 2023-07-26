@@ -7,7 +7,6 @@ interface MenuProps {
 }
 
 export function Menu({ isClosing, pages }: MenuProps) {
-
   return (
     <menu className={`menu ${isClosing ? 'closing' : ''}`}>
       {pages.map((page) => (
@@ -27,4 +26,3 @@ export function Menu({ isClosing, pages }: MenuProps) {
     </menu>
   )
 }
-

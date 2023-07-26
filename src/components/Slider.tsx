@@ -3,7 +3,6 @@ import '@splidejs/react-splide/css'
 import { sliderData } from 'assets/data/sllider'
 import 'sass/style.scss'
 
-
 const spliderOptions = {
   type: 'loop',
   role: 'carousel',

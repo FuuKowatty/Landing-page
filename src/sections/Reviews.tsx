@@ -1,7 +1,6 @@
 import { usersData } from 'assets/data/reviews'
 import { Review } from 'components/Review'
 
-
 export function Reviews() {
   return (
     <section className='reviews__container' id='Opinions'>

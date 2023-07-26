@@ -5,7 +5,6 @@ import 'sass/style.scss'
 import { Menu } from './Menu'
 import { useViewport } from 'hooks/useViewport'
 
-
 export function Navbar({ pages }: { pages: MenuItemProps[] }) {
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)

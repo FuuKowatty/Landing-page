@@ -9,7 +9,6 @@ import { Footer } from 'components/Footer'
 import { toursData } from 'assets/data/tours'
 import { sectionsData } from 'assets/data/sections'
 
-
 export function App() {
   const [userTour, setUserTour] = useState<tourProps | null>(null)
 

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 interface Modal {
-  isModalOpen: boolean;
-  isClosing: boolean;
-  openModal: () => void;
-  closeModal: () => void;
+  isModalOpen: boolean
+  isClosing: boolean
+  openModal: () => void
+  closeModal: () => void
 }
 
 export const useModal = (): Modal => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 interface Viewport {
-  browserWidth: number;
-  isMobile: boolean;
-  isTablet: boolean;
+  browserWidth: number
+  isMobile: boolean
+  isTablet: boolean
 }
 
 export const useViewport = (): Viewport => {

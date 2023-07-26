@@ -1,4 +1,4 @@
-import { Link } from 'react-scroll';
+import { Link } from 'react-scroll'
 import 'sass/style.scss'
 
 interface TourCardProps {
@@ -18,19 +18,18 @@ export function TourCard({ tour, handleUserTour }: TourCardProps) {
       </div>
       <div className='tour-card__price'>Price: ${price}</div>
 
-     
-        <Link         
-          to={'reservation'}
-          smooth={true}
-          spy={true}
-          duration={500}
-          role='button'
-          offset={-100}  
-          className='tour-card__button reset__anchor' 
-    
-        onClick={() => handleUserTour(tour.name)}>
+      <Link
+        to={'reservation'}
+        smooth={true}
+        spy={true}
+        duration={500}
+        role='button'
+        offset={-100}
+        className='tour-card__button reset__anchor'
+        onClick={() => handleUserTour(tour.name)}
+      >
         Book Now
-</Link>
+      </Link>
     </div>
   )
 }

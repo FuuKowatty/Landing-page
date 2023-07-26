@@ -7,11 +7,11 @@ export default function About() {
         <h2 className='section__title'>About Us</h2>
         <p className='about__description'>
           {' '}
-          we specialize in providing unforgettable tour experiences across various Asian countries.
-          Our primary focus is to offer affordable travel packages that encompass all aspects of
-          your journey, including hotel accommodations and meticulously planned entertainment
-          activities. We take pride in catering to larger groups of travelers while ensuring that
-          they receive exceptional value for their money.!
+          We specialise in providing memorable travel experiences in various Asian countries. Our
+          primary focus is to offer affordable tour packages that cover all aspects of your trip,
+          including hotel accommodation and carefully planned entertainment activities. We pride
+          ourselves on being able to cater for larger groups of travellers whilst ensuring that they
+          receive exceptional value for money!
         </p>
       </div>
       <Slider />
