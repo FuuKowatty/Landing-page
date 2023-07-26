@@ -5,8 +5,7 @@ import 'sass/style.scss'
 import { Menu } from './Menu'
 import { useViewport } from 'hooks/useViewport'
 
-
-export function Navbar({ pages }: { pages: MenuItemProps[] }) {
+export function Navbar() {
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 
@@ -31,20 +30,20 @@ export function Navbar({ pages }: { pages: MenuItemProps[] }) {
       </span>
       <div className='navbar__mobile'>
         {isVisible ? (
-          <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
+          <button
+            className={`icon__button ${isClosing ? 'closing' : ''}`}
+            onClick={handleClose}
+            aria-label='close menu'
+          >
             <AiOutlineClose />
           </button>
         ) : (
-          <button className='icon__button' onClick={handleIsVisible}>
+          <button className='icon__button' onClick={handleIsVisible} aria-label='open menu'>
             <CiMenuFries />
           </button>
         )}
       </div>
-      {isMobile ? (
-        isVisible && <Menu isClosing={isClosing} pages={pages} />
-      ) : (
-        <Menu pages={pages} />
-      )}
+      {isMobile ? isVisible && <Menu isClosing={isClosing} /> : <Menu />}
     </nav>
   )
 }

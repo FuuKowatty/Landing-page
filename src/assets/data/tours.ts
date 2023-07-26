@@ -1,4 +1,4 @@
-export const toursData = [
+export const tours = [
     {
       name: 'Japan Sakura Delight',
       description: 'Explore the captivating beauty of Japan during cherry blossom season.',
@@ -48,4 +48,4 @@ export const toursData = [
       return: new Date('2025-01-24'),
       image: 'https://i.imgur.com/YkXblLr.jpg',
     },
-  ]
+]

@@ -1,19 +1,29 @@
 import * as yup from 'yup'
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
 
 export const schema = yup.object().shape({
-  firstName: yup.string().required('This field is required'),
-  lastName: yup.string().required('This field is required'),
-  gender: yup.string().required('Please select a gender'),
-  email: yup.string().email('Please enter a valid email').required('This field is required'),
-  phoneNumber: yup
+  firstName: yup
     .string()
-    .matches(/^[0-9]+$/, 'Please provide only numeric digits')
-    .matches(/^[0-9]{10,15}$/, 'Phone number should be between 10 and 15 digits')
-    .matches(phoneRegExp, 'Please provide a valid phone number')
-    .required('This field is required'),
+    .matches(/^[A-Za-z]*$/, 'Please enter a valid name without spaces')
+    .max(40)
+    .required('First name is required'),
+  lastName: yup
+    .string()
+    .matches(/^[A-Za-z]*$/, 'Please enter a valid name without spaces')
+    .max(40)
+    .required(),
+  gender: yup.string().required('Please select a gender'),
+  email: yup
+    .string()
+    .email('Please enter a valid email')
+    .required('This field is required')
+    .test(
+      'no-spaces',
+      'Spaces are not allowed in the email without spaces',
+      (value) => !/\s/.test(value),
+    ),
+  phoneNumber: yup.string().matches(phoneRegex).required('Phone number is required.'),
   additionalInformation: yup.string(),
   holiday: yup.string().required('Please select your holiday option'),
 })

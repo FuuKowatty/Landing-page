@@ -1,56 +1,23 @@
-import { useFormik } from 'formik'
+import { useTourContext } from 'context/TourProvider'
 import { InputField } from './InputField'
 import { RadioGenderInputs } from './RadioGenderInputs'
 import { SelectField } from './SelectField'
 import { TextAreaField } from './TextArea'
-import { ChangeEvent, MouseEvent, useEffect } from 'react'
-import { schema } from 'utils/schema'
 import { Modal } from 'components/Modal'
-import { useModal } from 'hooks/useModal'
+import { useForm } from 'hooks/useForm'
 
-export function Form({ userTour, handleUserTour, tourNames }: reservationProps) {
-  const { isModalOpen, isClosing, openModal, closeModal } = useModal()
-
-  const handleCloseModal = (event: MouseEvent<HTMLButtonElement>) => {
-    onFormReset(event)
-    closeModal()
+export function Form() {
+  const { userTour } = useTourContext()
+  const convertToDDMMYYYY = (date: Date) => {
+    return date.toISOString().substring(0, 10)
   }
 
-  const handleOnSubmit = () => {
-    if (userTour) {
-      openModal()
-    }
-  }
-
-  const { handleSubmit, handleChange, handleReset, values, errors, touched, setFieldValue } =
-    useFormik({
-      initialValues: {
-        firstName: '',
-        lastName: '',
-        gender: '',
-        email: '',
-        phoneNumber: '',
-        additionalInformation: '',
-        holiday: '',
-      },
-      validationSchema: schema,
-      onSubmit: handleOnSubmit,
-    })
-
-  useEffect(() => {
-    if (userTour) {
-      setFieldValue('holiday', userTour.name)
-    }
-  }, [userTour, setFieldValue])
-
-  const onTourChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    handleUserTour(event.currentTarget.value)
-  }
-
-  const onFormReset = (event: MouseEvent<HTMLButtonElement>) => {
-    handleUserTour(null)
-    handleReset(event)
-  }
+  const {
+    form: { handleSubmit, handleChange, values, errors, touched, onFormReset },
+    modal: { isModalOpen, isClosing, handleCloseModal },
+    tourNames,
+    onTourChange,
+  } = useForm()
 
   return (
     <>
@@ -63,7 +30,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             placeholder='John'
             value={values.firstName}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.firstName}
             touched={touched.firstName}
           />
@@ -73,14 +40,14 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             placeholder='Smith'
             value={values.lastName}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.lastName}
             touched={touched.lastName}
           />
           <RadioGenderInputs
             value={values.gender}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.gender}
             touched={touched.gender}
           />
@@ -94,7 +61,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             value={values.holiday}
             onChange={(event) => onTourChange(event)}
             options={tourNames}
-            required={true}
+            required
             error={errors.holiday}
             touched={touched.holiday}
           />
@@ -103,16 +70,16 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
               type='date'
               label='Depart'
               id='depart-date'
-              value={userTour?.depart ? userTour.depart.toISOString().substr(0, 10) : ''}
-              readonly={true}
+              value={userTour?.depart ? convertToDDMMYYYY(userTour.depart) : ''}
+              readOnly
             />
 
             <InputField
               type='date'
               label='Return'
               id='return-date'
-              value={userTour?.return ? userTour.return.toISOString().substr(0, 10) : ''}
-              readonly={true}
+              value={userTour?.return ? convertToDDMMYYYY(userTour.return) : ''}
+              readOnly
             />
           </div>
         </fieldset>
@@ -125,7 +92,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             placeholder='JohnSmith1@example.com'
             value={values.email}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.email}
             touched={touched.email}
           />
@@ -136,7 +103,7 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
             placeholder='2124567890'
             value={values.phoneNumber}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.phoneNumber}
             touched={touched.phoneNumber}
           />
@@ -161,7 +128,14 @@ export function Form({ userTour, handleUserTour, tourNames }: reservationProps) 
           </button>
         </div>
       </form>
-      {userTour && isModalOpen && <Modal onClose={handleCloseModal} isClosing={isClosing} />}
+      {userTour && isModalOpen && (
+        <Modal
+          title='Reservation Completed'
+          description='Your Reservation has been completed'
+          onClose={handleCloseModal}
+          isClosing={isClosing}
+        />
+      )}
     </>
   )
 }
