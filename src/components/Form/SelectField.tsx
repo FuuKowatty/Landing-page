@@ -1,14 +1,9 @@
-import { ChangeEvent } from 'react'
 import { RequiredSymbol } from './RequiredSymbol'
 import { Tooltip } from 'components/Tooltip'
 
-interface SelectFieldProps {
+interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label: string
-  id: string
-  value: string
-  onChange: (e: ChangeEvent<HTMLSelectElement>) => void
   options: string[]
-  required?: boolean
   error: string | undefined
   touched?: boolean
 }

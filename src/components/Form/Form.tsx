@@ -30,7 +30,7 @@ export function Form() {
             placeholder='John'
             value={values.firstName}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.firstName}
             touched={touched.firstName}
           />
@@ -40,14 +40,14 @@ export function Form() {
             placeholder='Smith'
             value={values.lastName}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.lastName}
             touched={touched.lastName}
           />
           <RadioGenderInputs
             value={values.gender}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.gender}
             touched={touched.gender}
           />
@@ -61,7 +61,7 @@ export function Form() {
             value={values.holiday}
             onChange={(event) => onTourChange(event)}
             options={tourNames}
-            required={true}
+            required
             error={errors.holiday}
             touched={touched.holiday}
           />
@@ -71,7 +71,7 @@ export function Form() {
               label='Depart'
               id='depart-date'
               value={userTour?.depart ? convertToDDMMYYYY(userTour.depart) : ''}
-              readonly={true}
+              readOnly
             />
 
             <InputField
@@ -79,7 +79,7 @@ export function Form() {
               label='Return'
               id='return-date'
               value={userTour?.return ? convertToDDMMYYYY(userTour.return) : ''}
-              readonly={true}
+              readOnly
             />
           </div>
         </fieldset>
@@ -92,7 +92,7 @@ export function Form() {
             placeholder='JohnSmith1@example.com'
             value={values.email}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.email}
             touched={touched.email}
           />
@@ -103,7 +103,7 @@ export function Form() {
             placeholder='2124567890'
             value={values.phoneNumber}
             onChange={handleChange}
-            required={true}
+            required
             error={errors.phoneNumber}
             touched={touched.phoneNumber}
           />

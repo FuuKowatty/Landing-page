@@ -1,6 +1,7 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { tours } from 'assets/data/tours'
 import { TourCard } from 'components/TourCard'
-import { tours, useTourContext } from 'context/TourProvider'
+import { useTourContext } from 'context/TourProvider'
 import 'sass/style.scss'
 
 const spliderOptions = {
