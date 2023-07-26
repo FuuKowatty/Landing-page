@@ -1,4 +1,4 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { TourCard } from 'components/TourCard'
 import 'sass/style.scss'
 
@@ -6,7 +6,6 @@ const spliderOptions = {
   type: 'loop',
   role: 'carousel',
   rewind: true,
-  arrows: true,
   gap: 10,
   mediaQuery: 'min',
   perPage: 1,
@@ -35,21 +34,20 @@ export function Explore({
     <section className='explore' id='Explore'>
       <h2 className='section__title'>Explore</h2>
       <div className='tours'>
-        <Splide options={spliderOptions}>
+        <Splide options={spliderOptions} hasTrack={false}>
+        <SplideTrack>
           {tours.map((tour) => {
             return (
-              <SplideSlide key={tour.name}>
-                <TourCard tour={tour} handleUserTour={handleUserTour} />
-              </SplideSlide>
+                <SplideSlide key={tour.name}>
+                  <TourCard tour={tour} handleUserTour={handleUserTour} />
+                </SplideSlide>
             )
           })}
-          {tours.map((tour) => {
-            return (
-              <SplideSlide key={tour.name}>
-                <TourCard tour={tour} handleUserTour={handleUserTour} />
-              </SplideSlide>
-            )
-          })}
+          </SplideTrack>
+          <div className='splide__arrows'>
+            <button style={{padding: '25px'}} className='splide__arrow splide__arrow--prev slider__arrow'>{'<'}</button>
+            <button style={{padding: '25px'}} className='splide__arrow splide__arrow--next'>{'>'}</button>
+          </div>
         </Splide>
       </div>
     </section>

@@ -30,11 +30,11 @@ export function Navbar({ pages }: { pages: MenuItemProps[] }) {
       </span>
       <div className='navbar__mobile'>
         {isVisible ? (
-          <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
+          <button className={`icon__button ${isClosing ? 'closing' : ''}`} onClick={handleClose} aria-label='close menu'>
             <AiOutlineClose />
           </button>
         ) : (
-          <button className='icon__button' onClick={handleIsVisible}>
+          <button className='icon__button' onClick={handleIsVisible} aria-label='open menu'>
             <CiMenuFries />
           </button>
         )}
