@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect } from 'react'
+import { MouseEvent, useLayoutEffect } from 'react'
 
 interface ModalProps {
   onClose: (event: MouseEvent<HTMLButtonElement>) => void
@@ -8,7 +8,7 @@ interface ModalProps {
 }
 
 export function Modal({ onClose, isClosing, title, description }: ModalProps) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.style.overflow = 'hidden'
     document.body.style.paddingRight = '15px' //  /* Avoid width reflow */
 
